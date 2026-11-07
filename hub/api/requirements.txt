@@ -9,4 +9,4 @@ Brotli==1.2.1
 pydantic==2.14.1
 pydantic-settings==2.16.1
 python-multipart==0.0.32
-apprise==2.0.1
+apprise==2.1.0
