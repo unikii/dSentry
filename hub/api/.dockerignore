@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+.env
+.env.example
+tests/
+*.pyc
+*.pyo
+run.sh
+data/
+*.db
+*.db-*
+jwt_secret

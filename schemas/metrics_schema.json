@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Shared metric field definitions for dSentry. This is the canonical source of truth for metric names across dsnode (Go), Hub API (Python), Web UI (TypeScript), and VictoriaMetrics series.",
+  "version": 1,
+  "measurements": {
+    "device_metric": {
+      "description": "Raw 5-min SMART metric samples",
+      "tags": ["device_id"],
+      "fields": [
+        {
+          "name": "temperature_celsius",
+          "go_field": "TemperatureCelsius",
+          "label": "Temperature",
+          "type": "float",
+          "unit": "°C",
+          "aggregate": "avg",
+          "description": "Drive temperature in Celsius"
+        },
+        {
+          "name": "power_on_hours",
+          "go_field": "PowerOnHours",
+          "label": "Power-On Hours",
+          "type": "int",
+          "unit": "hours",
+          "aggregate": "max",
+          "description": "Total power-on hours"
+        },
+        {
+          "name": "power_cycles",
+          "go_field": "PowerCycles",
+          "label": "Power Cycles",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "Number of power cycles"
+        },
+        {
+          "name": "total_bytes_written",
+          "go_field": "TotalBytesWritten",
+          "label": "Total Written",
+          "type": "int",
+          "unit": "bytes",
+          "aggregate": "max",
+          "description": "Total bytes written to media"
+        },
+        {
+          "name": "total_bytes_read",
+          "go_field": "TotalBytesRead",
+          "label": "Total Read",
+          "type": "int",
+          "unit": "bytes",
+          "aggregate": "max",
+          "description": "Total bytes read from media"
+        },
+        {
+          "name": "wear_level_pct",
+          "go_field": "WearLevelPct",
+          "label": "Wear Level",
+          "type": "float",
+          "unit": "%",
+          "aggregate": "max",
+          "description": "Device wear level percentage"
+        },
+        {
+          "name": "available_spare_pct",
+          "go_field": "AvailableSparePct",
+          "label": "Available Spare",
+          "type": "float",
+          "unit": "%",
+          "aggregate": "min",
+          "description": "Available spare capacity percentage"
+        },
+        {
+          "name": "transport_error_count",
+          "go_field": "TransportErrorCount",
+          "label": "Transport Errors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "Number of transport errors"
+        },
+        {
+          "name": "unsafe_shutdown_count",
+          "go_field": "UnsafeShutdownCount",
+          "label": "Unsafe Shutdowns",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "Number of unsafe shutdowns"
+        },
+        {
+          "name": "nvme_critical_warning",
+          "go_field": "NVMECriticalWarning",
+          "label": "NVMe Critical Warning",
+          "type": "int",
+          "unit": "bitmask",
+          "aggregate": "max",
+          "description": "NVMe critical warning bitmask"
+        },
+        {
+          "name": "nvme_host_read_commands",
+          "go_field": "NVMEHostReadCommands",
+          "label": "NVMe Host Reads",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe host read commands"
+        },
+        {
+          "name": "nvme_host_write_commands",
+          "go_field": "NVMEHostWriteCommands",
+          "label": "NVMe Host Writes",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe host write commands"
+        },
+        {
+          "name": "nvme_controller_busy_time",
+          "go_field": "NVMEControllerBusyTime",
+          "label": "NVMe Controller Busy",
+          "type": "int",
+          "unit": "minutes",
+          "aggregate": "max",
+          "description": "NVMe controller busy time"
+        },
+        {
+          "name": "nvme_media_and_data_integrity_errors",
+          "go_field": "NVMEMediaAndDataIntegrityErrors",
+          "label": "NVMe Integrity Errors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe media and data integrity errors"
+        },
+        {
+          "name": "nvme_error_log_entries",
+          "go_field": "NVMEErrorLogEntries",
+          "label": "NVMe Error Logs",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe error log entries"
+        },
+        {
+          "name": "nvme_warning_comp_temp_time",
+          "go_field": "NVMEWarningCompTempTime",
+          "label": "NVMe Warn Temp Time",
+          "type": "int",
+          "unit": "minutes",
+          "aggregate": "max",
+          "description": "NVMe warning composite temperature time"
+        },
+        {
+          "name": "nvme_critical_comp_temp_time",
+          "go_field": "NVMECriticalCompTempTime",
+          "label": "NVMe Crit Temp Time",
+          "type": "int",
+          "unit": "minutes",
+          "aggregate": "max",
+          "description": "NVMe critical composite temperature time"
+        },
+        {
+          "name": "nvme_thermal_t1_transition_count",
+          "go_field": "NVMEThermalT1TransitionCount",
+          "label": "NVMe Thermal T1",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe thermal management T1 transitions"
+        },
+        {
+          "name": "nvme_thermal_t2_transition_count",
+          "go_field": "NVMEThermalT2TransitionCount",
+          "label": "NVMe Thermal T2",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "NVMe thermal management T2 transitions"
+        },
+        {
+          "name": "ata_raw_read_error_rate",
+          "go_field": "ATARawReadErrorRate",
+          "label": "ATA Read Errors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA raw read error rate"
+        },
+        {
+          "name": "ata_reallocated_sector_ct",
+          "go_field": "ATAReallocatedSectorCt",
+          "label": "Reallocated Sectors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA reallocated sector count"
+        },
+        {
+          "name": "ata_seek_error_rate",
+          "go_field": "ATASeekErrorRate",
+          "label": "ATA Seek Errors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA seek error rate"
+        },
+        {
+          "name": "ata_reported_uncorrect",
+          "go_field": "ATAReportedUncorrect",
+          "label": "Reported Uncorrectable",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA reported uncorrectable errors"
+        },
+        {
+          "name": "ata_command_timeout",
+          "go_field": "ATACommandTimeout",
+          "label": "Command Timeouts",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA command timeout count"
+        },
+        {
+          "name": "ata_current_pending_sector",
+          "go_field": "ATACurrentPendingSector",
+          "label": "Pending Sectors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA current pending sector count"
+        },
+        {
+          "name": "ata_offline_uncorrectable",
+          "go_field": "ATAOfflineUncorrectable",
+          "label": "Offline Uncorrectable",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA offline uncorrectable sector count"
+        },
+        {
+          "name": "hdd_start_stop_count",
+          "go_field": "HDDStartStopCount",
+          "label": "HDD Start/Stop",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "HDD start/stop cycle count"
+        },
+        {
+          "name": "hdd_load_unload_cycles",
+          "go_field": "HDDLoadUnloadCycles",
+          "label": "HDD Load/Unload",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "HDD load/unload cycle count"
+        },
+        {
+          "name": "ata_hdd_spin_retry_count",
+          "go_field": "ATAHDDSpinRetryCount",
+          "label": "Spin Retry Count",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA HDD spin retry count"
+        },
+        {
+          "name": "ata_hdd_g_sense_error_rate",
+          "go_field": "ATAHDDGSenseErrorRate",
+          "label": "G-Sense Errors",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "ATA HDD G-sense error rate"
+        },
+        {
+          "name": "scsi_elements_in_grown_defect_list",
+          "go_field": "SCSIElementsInGrownDefectList",
+          "label": "SCSI Grown Defects",
+          "type": "int",
+          "unit": "count",
+          "aggregate": "max",
+          "description": "SCSI elements in grown defect list"
+        }
+      ]
+    }
+  }
+}

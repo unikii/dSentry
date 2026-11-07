@@ -1,0 +1,6 @@
+name: "dSentry CodeQL configuration"
+
+paths-ignore:
+  - "hub/ui/src/client"
+  - "hub/ui/openapi.json"
+  - "node/testdata"

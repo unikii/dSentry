@@ -1,0 +1,111 @@
+name: Release dsnode
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: linux
+            goarch: arm
+            goarm: "7"
+          - goos: darwin
+            goarch: amd64
+          - goos: darwin
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+          - goos: windows
+            goarch: arm64
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: node/go.mod
+
+      - name: Build binary
+        run: |
+          cd node
+
+          SUFFIX=""
+          if [ "${{ matrix.goos }}" = "windows" ]; then SUFFIX=".exe"; fi
+
+          GOARM=${{ matrix.goarm || '' }} \
+          GOOS=${{ matrix.goos }} \
+          GOARCH=${{ matrix.goarch }} \
+            go build -ldflags="-s -w -X main.Version=${{ github.ref_name }}" \
+            -o "dsnode-${{ matrix.goos }}-${{ matrix.goarch }}${SUFFIX}" .
+
+          sha256sum "dsnode-${{ matrix.goos }}-${{ matrix.goarch }}${SUFFIX}" \
+            > "dsnode-${{ matrix.goos }}-${{ matrix.goarch }}${SUFFIX}.sha256"
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: |
+            node/dsnode-${{ matrix.goos }}-${{ matrix.goarch }}*
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dsnode-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: |
+            node/dsnode-${{ matrix.goos }}-${{ matrix.goarch }}*
+            node/dsnode-${{ matrix.goos }}-${{ matrix.goarch }}*.sha256
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: node/go.mod
+
+      - name: Vet and test
+        working-directory: node
+        run: |
+          test -z "$(gofmt -l .)"
+          go vet ./...
+          go test ./...
+
+  release:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: dsnode-*
+          merge-multiple: true
+
+      - run: ls -la artifacts/
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/*
+            LICENSE
+            NOTICE
+          fail_on_unmatched_files: true
+          generate_release_notes: true

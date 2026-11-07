@@ -1,0 +1,478 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      4
+    ],
+    "pre_release": false,
+    "svn_revision": "5530",
+    "platform_info": "x86_64-linux-6.14.0-2-pve",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-xj",
+      "/dev/sdv"
+    ],
+    "exit_status": 4
+  },
+  "local_time": {
+    "time_t": 1744485260,
+    "asctime": "Sat Apr 12 15:14:20 2025 EDT"
+  },
+  "device": {
+    "name": "/dev/sdv",
+    "info_name": "/dev/sdv",
+    "type": "scsi",
+    "protocol": "SCSI"
+  },
+  "scsi_vendor": "SEAGATE",
+  "scsi_product": "ST20000NM002D",
+  "scsi_model_name": "SEAGATE ST20000NM002D",
+  "scsi_revision": "ES02",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 39063650304,
+    "bytes": 20000588955648
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "scsi_lb_provisioning": {
+    "name": "fully provisioned",
+    "value": 0,
+    "management_enabled": {
+      "name": "LBPME",
+      "value": 0
+    },
+    "read_zeros": {
+      "name": "LBPRZ",
+      "value": 0
+    }
+  },
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "logical_unit_id": "0x5000c50000000001",
+  "serial_number": "XXXXXXXXxxxxxxxxxxxx",
+  "device_type": {
+    "scsi_terminology": "Peripheral Device Type [PDT]",
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "scsi_transport_protocol": {
+    "name": "SAS (SPL-4)",
+    "value": 6
+  },
+  "smart_support": {
+    "available": true,
+    "enabled": true
+  },
+  "temperature_warning": {
+    "enabled": true
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "scsi_environmental_reports": {
+    "temperature_1": {
+      "parameter_code": 0,
+      "current": 30,
+      "lifetime_maximum": 41,
+      "lifetime_minimum": 22,
+      "maximum_since_power_on": 33,
+      "minimum_since_power_on": 26
+    },
+    "relative_humidity_1": {
+      "parameter_code": 256,
+      "current": 0,
+      "lifetime_maximum": 0,
+      "lifetime_minimum": 0,
+      "maximum_since_power_on": 0,
+      "minimum_since_power_on": 0
+    }
+  },
+  "scsi_start_stop_cycle_counter": {
+    "year_of_manufacture": "2022",
+    "week_of_manufacture": "51",
+    "specified_cycle_count_over_device_lifetime": 50000,
+    "accumulated_start_stop_cycles": 29,
+    "specified_load_unload_count_over_device_lifetime": 600000,
+    "accumulated_load_unload_cycles": 24539
+  },
+  "scsi_grown_defect_list": 0,
+  "power_on_time": {
+    "hours": 8705,
+    "minutes": 0
+  },
+  "seagate_farm_log": {
+    "supported": true
+  },
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "505215.249",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "40659.739",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "scsi_pending_defects": {
+    "count": 0
+  },
+  "scsi_self_test_0": {
+    "code": {
+      "value": 2,
+      "string": "Background long"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 8176,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_1": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6346,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_2": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6322,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_3": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6298,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_4": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6274,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_5": {
+    "code": {
+      "value": 2,
+      "string": "Background long"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6257,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_6": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6226,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_7": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6202,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_8": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6178,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_9": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6154,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_10": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6130,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_11": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6106,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_12": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6082,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_13": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6058,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_14": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6034,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_15": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 6010,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_16": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 5986,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_17": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 5962,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_18": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 5938,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_self_test_19": {
+    "code": {
+      "value": 1,
+      "string": "Background short"
+    },
+    "result": {
+      "value": 0,
+      "string": "Completed"
+    },
+    "power_on_time": {
+      "hours": 5914,
+      "aka": "accumulated_power_on_hours"
+    }
+  },
+  "scsi_extended_self_test_seconds": 102780,
+  "scsi_background_scan": {
+    "status": {
+      "value": 0,
+      "string": "no scans active",
+      "number_scans_performed": 0,
+      "scan_progress": "0.00%",
+      "number_medium_scans_performed": 0
+    }
+  },
+  "scsi_sas_port_0": {
+    "relative_target_port_id": 1,
+    "generation_code": 0,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 0,
+      "attached_device_type": "expander device",
+      "attached_reason": "SMP phy control function",
+      "reason": "power on",
+      "negotiated_logical_link_rate": "phy enabled; 6 Gbps",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "001"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "001"
+      },
+      "sas_address": "0x5000c50000000011",
+      "attached_sas_address": "0x5000000000000000",
+      "attached_phy_identifier": 38,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 2,
+      "phy_reset_problem_count": 0
+    }
+  },
+  "scsi_sas_port_1": {
+    "relative_target_port_id": 2,
+    "generation_code": 0,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 1,
+      "attached_device_type": "expander device",
+      "attached_reason": "SMP phy control function",
+      "reason": "power on",
+      "negotiated_logical_link_rate": "phy enabled; 6 Gbps",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "001"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "001"
+      },
+      "sas_address": "0x5000c50000000012",
+      "attached_sas_address": "0x5000000000000001",
+      "attached_phy_identifier": 38,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 0,
+      "phy_reset_problem_count": 0
+    }
+  }
+}

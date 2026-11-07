@@ -1,0 +1,202 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      3
+    ],
+    "svn_revision": "5338",
+    "platform_info": "i686-w64-mingw32-2022-21H2(64)",
+    "build_info": "(sf-7.3-1)",
+    "argv": [
+      "smartctl",
+      "--xall",
+      "--json",
+      "/dev/sdu"
+    ],
+    "exit_status": 0
+  },
+  "local_time": {
+    "time_t": 1692704980,
+    "asctime": "Tue Aug 22 07:49:40 2023 EDT"
+  },
+  "device": {
+    "name": "/dev/sdu",
+    "info_name": "/dev/sdu",
+    "type": "scsi",
+    "protocol": "SCSI"
+  },
+  "scsi_vendor": "HGST",
+  "scsi_product": "HUH721010AL42C0",
+  "scsi_model_name": "HGST HUH721010AL42C0",
+  "scsi_revision": "A3Z4",
+  "scsi_version": "SPC-4",
+  "user_capacity": {
+    "blocks": 2441609216,
+    "bytes": 10000831348736
+  },
+  "logical_block_size": 4096,
+  "scsi_lb_provisioning": {
+    "name": "fully provisioned",
+    "value": 0,
+    "management_enabled": {
+      "name": "LBPME",
+      "value": 0
+    },
+    "read_zeros": {
+      "name": "LBPRZ",
+      "value": 0
+    }
+  },
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "logical_unit_id": "0x5000cca200000000",
+  "serial_number": "2TJR0000",
+  "device_type": {
+    "scsi_terminology": "Peripheral Device Type [PDT]",
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "scsi_transport_protocol": {
+    "name": "SAS (SPL-4)",
+    "value": 6
+  },
+  "smart_support": {
+    "available": true,
+    "enabled": true
+  },
+  "temperature_warning": {
+    "enabled": true
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 36,
+    "drive_trip": 85
+  },
+  "scsi_start_stop_cycle_counter": {
+    "year_of_manufacture": "2018",
+    "week_of_manufacture": "12",
+    "specified_cycle_count_over_device_lifetime": 50000,
+    "accumulated_start_stop_cycles": 37,
+    "specified_load_unload_count_over_device_lifetime": 600000,
+    "accumulated_load_unload_cycles": 1695
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 25,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 25,
+      "correction_algorithm_invocations": 56612502,
+      "gigabytes_processed": "202451.384",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 2358119,
+      "gigabytes_processed": "158917.284",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 44,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 44,
+      "correction_algorithm_invocations": 34341,
+      "gigabytes_processed": "1860404.683",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "scsi_background_scan": {
+    "status": {
+      "value": 1,
+      "string": "scan is active",
+      "number_scans_performed": 207,
+      "scan_progress": "25.46%",
+      "number_medium_scans_performed": 207
+    },
+    "result_1": {
+      "parameter_code": 1,
+      "accumulated_power_on": {
+        "minutes": 454112
+      },
+      "lba": 208810811,
+      "sense_key": {
+        "value": 1,
+        "string": "Recovered Error"
+      },
+      "asc": 24,
+      "ascq": 2,
+      "reassign_status": {
+        "value": 2,
+        "string": "Successfully reassigned"
+      }
+    }
+  },
+  "power_on_time": {
+    "hours": 39983,
+    "minutes": 35
+  },
+  "scsi_sas_port_0": {
+    "relative_target_port_id": 1,
+    "generation_code": 1,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 0,
+      "attached_device_type": "expander device",
+      "attached_reason": "unknown",
+      "reason": "unknown",
+      "negotiated_logical_link_rate": "phy enabled; 3 Gbps",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "001"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "001"
+      },
+      "sas_address": "0x5000cca200000001",
+      "attached_sas_address": "0x5000000000000000",
+      "attached_phy_identifier": 21,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 0,
+      "phy_reset_problem_count": 0
+    }
+  },
+  "scsi_sas_port_1": {
+    "relative_target_port_id": 2,
+    "generation_code": 1,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 1,
+      "attached_device_type": "no device attached",
+      "attached_reason": "unknown",
+      "reason": "power on",
+      "negotiated_logical_link_rate": "phy enabled; unknown",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "000"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "000"
+      },
+      "sas_address": "0x5000cca200000002",
+      "attached_sas_address": "0x0",
+      "attached_phy_identifier": 0,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 0,
+      "phy_reset_problem_count": 0
+    }
+  }
+}

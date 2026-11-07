@@ -1,0 +1,62 @@
+{
+  "name": "dsentry-ui",
+  "private": true,
+  "license": "Apache-2.0",
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.34.7",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "check": "pnpm typecheck && pnpm lint && pnpm build",
+    "test": "vitest run",
+    "preview": "vite preview",
+    "codegen": "openapi-ts",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@hey-api/client-fetch": "^0.13.1",
+    "@radix-ui/react-alert-dialog": "^1.1.20",
+    "@radix-ui/react-dialog": "^1.1.20",
+    "@radix-ui/react-label": "^2.1.12",
+    "@radix-ui/react-select": "^2.3.4",
+    "@radix-ui/react-separator": "^1.1.12",
+    "@radix-ui/react-slot": "^1.3.0",
+    "@radix-ui/react-switch": "^1.3.4",
+    "@radix-ui/react-tabs": "^1.1.18",
+    "@radix-ui/react-tooltip": "^1.2.13",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.25.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.9.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "js-yaml": "4.3.2",
+      "source-map-js": "1.2.2"
+    }
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.99.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "tailwindcss": "^4.3.3",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

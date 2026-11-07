@@ -1,0 +1,93 @@
+# dSentry hub stack.
+#
+# By default the API and UI use the published GHCR images:
+#   docker compose pull
+#   docker compose up -d
+#
+# To build the API and UI from this checkout instead:
+#   docker compose up -d --build
+#
+# Set API_IMAGE and UI_IMAGE to pin a release or use a fork's images.
+# The JWT secret auto-generates to ./data on first boot; optionally pre-set it:
+#   export JWT_SECRET=$(openssl rand -hex 32)
+
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:v1.154.1
+    restart: unless-stopped
+    command:
+      - "-storageDataPath=/var/lib/victoriametrics"
+      - "-retentionPeriod=${VICTORIAMETRICS_RETENTION:-12}"
+      - "-httpListenAddr=:8428"
+      - "-search.latencyOffset=0s"
+      - "-dedup.minScrapeInterval=1s"
+    ports:
+      - "127.0.0.1:8428:8428"
+    volumes:
+      - ./data/victoriametrics:/var/lib/victoriametrics
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8428/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    image: ${API_IMAGE:-ghcr.io/unikii/dsentry/dsentry-api:latest}
+    build:
+      context: .
+      dockerfile: ./hub/api/Dockerfile
+    restart: unless-stopped
+    environment:
+      RUN_MODE: ${RUN_MODE:-private}
+      APP_VERSION: ${APP_VERSION:-0.1.0}
+      API_DOCS_ENABLED: ${API_DOCS_ENABLED:-true}
+      SQLITE_PATH: /data/dsentry.db
+      VICTORIAMETRICS_URL: http://victoriametrics:8428
+      VICTORIAMETRICS_USERNAME: ${VICTORIAMETRICS_USERNAME:-}
+      VICTORIAMETRICS_PASSWORD: ${VICTORIAMETRICS_PASSWORD:-}
+      VICTORIAMETRICS_RETENTION: ${VICTORIAMETRICS_RETENTION:-12}
+      JWT_SECRET: ${JWT_SECRET:-}
+      JWT_ALGORITHM: HS256
+      JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-1440}
+      GLOBAL_NODE_PER_USER: ${GLOBAL_NODE_PER_USER:-20}
+      GLOBAL_DEVICE_PER_NODE: ${GLOBAL_DEVICE_PER_NODE:-99}
+      GLOBAL_PUSH_INTERVAL: ${GLOBAL_PUSH_INTERVAL:-30}
+      LATEST_METRICS_LOOKBACK_HOURS: ${LATEST_METRICS_LOOKBACK_HOURS:-48}
+      GLOBAL_RAW_PUSH_BASE: ${GLOBAL_RAW_PUSH_BASE:-day}
+      GLOBAL_RAW_PUSH_FREQ: ${GLOBAL_RAW_PUSH_FREQ:-1}
+      GLOBAL_RAW_PUSH_PLAIN: ${GLOBAL_RAW_PUSH_PLAIN:-true}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-}
+      # The bundled nginx is the only route to the API, so trusting its
+      # X-Real-IP/X-Forwarded-For headers is required for per-client limits.
+      # Set false when publishing the API port directly.
+      TRUST_PROXY_HEADERS: ${TRUST_PROXY_HEADERS:-true}
+      SMTP_URL: ${SMTP_URL:-}
+      LOGIN_NOTIFY_BANNER: ${LOGIN_NOTIFY_BANNER:-}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      OAUTH_ALLOWED_ORIGINS: ${OAUTH_ALLOWED_ORIGINS:-}
+      ALERT_ALLOW_PRIVATE_TARGETS: ${ALERT_ALLOW_PRIVATE_TARGETS:-false}
+    depends_on:
+      victoriametrics:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./data:/data
+
+  ui:
+    image: ${UI_IMAGE:-ghcr.io/unikii/dsentry/dsentry-ui:latest}
+    build:
+      context: .
+      dockerfile: hub/ui/Dockerfile
+      args:
+        VITE_API_BASE: /api
+        VITE_API_ENDPOINT: ${VITE_API_ENDPOINT:-}
+        VITE_GITHUB_REPO: ${VITE_GITHUB_REPO:-unikii/dsentry}
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:${UI_PORT:-3000}:80"

@@ -1,0 +1,489 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      5
+    ],
+    "pre_release": false,
+    "svn_revision": "5714",
+    "platform_info": "Darwin 20.6.0 x86_64",
+    "build_info": "(CircleCI)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-j",
+      "/dev/disk0"
+    ],
+    "drive_database_version": {
+      "string": "7.5/5706"
+    },
+    "exit_status": 0
+  },
+  "local_time": {
+    "time_t": 1783133593,
+    "asctime": "Sat Jul  4 10:53:13 2026 CST"
+  },
+  "device": {
+    "name": "/dev/disk0",
+    "info_name": "/dev/disk0",
+    "type": "ata",
+    "protocol": "ATA"
+  },
+  "model_family": "Apple SD/SM/TS...E/F/G SSDs",
+  "model_name": "APPLE SSD SM0256F",
+  "serial_number": "S1K4NYAF000000",
+  "wwn": {
+    "naa": 5,
+    "oui": 9528,
+    "id": 27201650000
+  },
+  "firmware_version": "UXM2JA1Q",
+  "user_capacity": {
+    "blocks": 490234752,
+    "bytes": 251000193024
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 0,
+  "trim": {
+    "supported": true,
+    "deterministic": false,
+    "zeroed": false
+  },
+  "in_smartctl_database": true,
+  "ata_version": {
+    "string": "ATA8-ACS T13/1699-D revision 4c",
+    "major_value": 508,
+    "minor_value": 57
+  },
+  "sata_version": {
+    "string": "SATA 3.0",
+    "value": 63
+  },
+  "interface_speed": {
+    "max": {
+      "sata_value": 14,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    },
+    "current": {
+      "sata_value": 3,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    }
+  },
+  "smart_support": {
+    "available": true,
+    "enabled": true
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "ata_smart_data": {
+    "offline_data_collection": {
+      "status": {
+        "value": 0,
+        "string": "was never started"
+      },
+      "completion_seconds": 0
+    },
+    "self_test": {
+      "status": {
+        "value": 0,
+        "string": "completed without error",
+        "passed": true
+      },
+      "polling_minutes": {
+        "short": 2,
+        "extended": 10
+      }
+    },
+    "capabilities": {
+      "values": [
+        95,
+        3
+      ],
+      "exec_offline_immediate_supported": true,
+      "offline_is_aborted_upon_new_cmd": true,
+      "offline_surface_scan_supported": true,
+      "self_tests_supported": true,
+      "conveyance_self_test_supported": false,
+      "selective_self_test_supported": true,
+      "attribute_autosave_enabled": true,
+      "error_logging_supported": true,
+      "gp_logging_supported": true
+    }
+  },
+  "ata_smart_attributes": {
+    "revision": 40,
+    "table": [
+      {
+        "id": 1,
+        "name": "Raw_Read_Error_Rate",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 26,
+          "string": "-O-RC- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Reallocated_Sector_Ct",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 51,
+          "string": "PO--CK ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Power_On_Hours",
+        "value": 93,
+        "worst": 93,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 31355,
+          "string": "31355"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Power_Cycle_Count",
+        "value": 22,
+        "worst": 22,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 78181,
+          "string": "78181"
+        }
+      },
+      {
+        "id": 169,
+        "name": "Unknown_Apple_Attrib",
+        "value": 253,
+        "worst": 253,
+        "thresh": 10,
+        "when_failed": "",
+        "flags": {
+          "value": 19,
+          "string": "PO--C- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 1718330855168,
+          "string": "1718330855168"
+        }
+      },
+      {
+        "id": 173,
+        "name": "Wear_Leveling_Count",
+        "value": 148,
+        "worst": 148,
+        "thresh": 100,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 5480480900459,
+          "string": "5480480900459"
+        }
+      },
+      {
+        "id": 174,
+        "name": "Host_Reads_MiB",
+        "value": 99,
+        "worst": 99,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 125457234,
+          "string": "125457234"
+        }
+      },
+      {
+        "id": 175,
+        "name": "Host_Writes_MiB",
+        "value": 99,
+        "worst": 99,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 125811604,
+          "string": "125811604"
+        }
+      },
+      {
+        "id": 192,
+        "name": "Power-Off_Retract_Count",
+        "value": 99,
+        "worst": 99,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 18,
+          "string": "-O--C- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 136,
+          "string": "136"
+        }
+      },
+      {
+        "id": 194,
+        "name": "Temperature_Celsius",
+        "value": 66,
+        "worst": 66,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 304942809122,
+          "string": "34 (Min/Max 2/71)"
+        }
+      },
+      {
+        "id": 197,
+        "name": "Current_Pending_Sector",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 199,
+        "name": "UDMA_CRC_Error_Count",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 26,
+          "string": "-O-RC- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 240,
+        "name": "Unknown_SSD_Attribute",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      }
+    ]
+  },
+  "spare_available": {
+    "current_percent": 100
+  },
+  "power_on_time": {
+    "hours": 31355
+  },
+  "power_cycle_count": 78181,
+  "endurance_used": {
+    "current_percent": 0
+  },
+  "temperature": {
+    "current": 34
+  },
+  "ata_smart_error_log": {
+    "summary": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_self_test_log": {
+    "standard": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_selective_self_test_log": {
+    "revision": 1,
+    "table": [
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      }
+    ],
+    "flags": {
+      "value": 0,
+      "remainder_scan_enabled": false
+    },
+    "power_up_scan_resume_minutes": 0
+  }
+}
