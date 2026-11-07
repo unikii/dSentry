@@ -2,7 +2,7 @@
 #
 # Usage (behind Caddy/Nginx, the API base is https://hub.example.com/api;
 # when connecting directly to the hub API it is http://hub.example.com:9090):
-#   $env:GITHUB_REPO="unikii/dsentry"; $env:API_ENDPOINT="https://hub.example.com/api"; $env:PUSH_KEY="uuid_push_key"; iwr -useb https://raw.githubusercontent.com/unikii/dsentry/master/scripts/install.ps1 | iex
+#   $env:GITHUB_REPO="unikii/dsentry"; $env:API_ENDPOINT="https://hub.example.com/api"; $env:PUSH_KEY="uuid_push_key"; iwr -useb https://raw.githubusercontent.com/unikii/dsentry/main/scripts/install.ps1 | iex
 #
 # Or:
 #   .\install.ps1 -ApiEndpoint "https://hub.example.com/api" -PushKey "uuid_push_key" -GithubRepo "unikii/dsentry"

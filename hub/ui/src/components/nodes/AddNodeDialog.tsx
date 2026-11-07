@@ -46,8 +46,8 @@ export function AddNodeDialog({ open, onOpenChange }: AddNodeDialogProps) {
 
   const pushKey = node?.push_key ?? "";
   const commands: Record<InstallTab, string> = {
-    linux: `export GITHUB_REPO="${GITHUB_REPO}"; curl -fsSL https://raw.githubusercontent.com/${GITHUB_REPO}/master/scripts/install.sh | sudo GITHUB_REPO="$GITHUB_REPO" sh -s -- "${API_ENDPOINT}" "${pushKey}"`,
-    windows: `$env:GITHUB_REPO="${GITHUB_REPO}"; $env:API_ENDPOINT="${API_ENDPOINT}"; $env:PUSH_KEY="${pushKey}"; iwr -useb https://raw.githubusercontent.com/${GITHUB_REPO}/master/scripts/install.ps1 | iex`,
+    linux: `export GITHUB_REPO="${GITHUB_REPO}"; curl -fsSL https://raw.githubusercontent.com/${GITHUB_REPO}/main/scripts/install.sh | sudo GITHUB_REPO="$GITHUB_REPO" sh -s -- "${API_ENDPOINT}" "${pushKey}"`,
+    windows: `$env:GITHUB_REPO="${GITHUB_REPO}"; $env:API_ENDPOINT="${API_ENDPOINT}"; $env:PUSH_KEY="${pushKey}"; iwr -useb https://raw.githubusercontent.com/${GITHUB_REPO}/main/scripts/install.ps1 | iex`,
     manual: `dsnode --api-endpoint ${API_ENDPOINT} --push-key ${pushKey}`,
   };
   const hints: Record<InstallTab, string> = {

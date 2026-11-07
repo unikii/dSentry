@@ -6,7 +6,7 @@ set -e
 # Usage (behind Caddy/Nginx, the API base is https://hub.example.com/api;
 # when connecting directly to the hub API it is http://hub.example.com:9090):
 #   export GITHUB_REPO=unikii/dsentry
-#   curl -fsSL https://raw.githubusercontent.com/${GITHUB_REPO}/master/scripts/install.sh | sudo GITHUB_REPO="$GITHUB_REPO" sh -s -- "https://hub.example.com/api" "uuid_push_key"
+#   curl -fsSL https://raw.githubusercontent.com/${GITHUB_REPO}/main/scripts/install.sh | sudo GITHUB_REPO="$GITHUB_REPO" sh -s -- "https://hub.example.com/api" "uuid_push_key"
 #
 # Or download and run:
 #   chmod +x install.sh

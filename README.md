@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/unikii/dsentry/actions/workflows/build-docker.yml"><img src="https://github.com/unikii/dsentry/actions/workflows/build-docker.yml/badge.svg?branch=master" alt="CI status" /></a>
-  <a href="https://github.com/unikii/dsentry/actions/workflows/codeql.yml"><img src="https://github.com/unikii/dsentry/actions/workflows/codeql.yml/badge.svg?branch=master" alt="CodeQL status" /></a>
+  <a href="https://github.com/unikii/dsentry/actions/workflows/build-docker.yml"><img src="https://github.com/unikii/dsentry/actions/workflows/build-docker.yml/badge.svg?branch=main" alt="CI status" /></a>
+  <a href="https://github.com/unikii/dsentry/actions/workflows/codeql.yml"><img src="https://github.com/unikii/dsentry/actions/workflows/codeql.yml/badge.svg?branch=main" alt="CodeQL status" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="License: Apache-2.0" /></a>
 </p>
 
@@ -161,14 +161,14 @@ release notes from merged changes.
 
 The installer downloads the latest tagged release, checks its SHA-256 file, and
 registers the node. Set `GITHUB_REPO` to the repository that owns your releases.
-The examples below use the current `master` branch; change it if you rename
+The examples below use the current `main` branch; change it if you rename
 your default branch.
 
 ### Linux and macOS
 
 ```bash
 export GITHUB_REPO=unikii/dsentry
-curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPO}/master/scripts/install.sh" \
+curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPO}/main/scripts/install.sh" \
   | sudo GITHUB_REPO="$GITHUB_REPO" sh -s -- \
       "https://hub.example.com/api" "your-push-key"
 ```
@@ -183,7 +183,7 @@ Run PowerShell as Administrator:
 $env:GITHUB_REPO = "unikii/dsentry"
 $env:API_ENDPOINT = "https://hub.example.com/api"
 $env:PUSH_KEY = "your-push-key"
-iwr -useb "https://raw.githubusercontent.com/$env:GITHUB_REPO/master/scripts/install.ps1" | iex
+iwr -useb "https://raw.githubusercontent.com/$env:GITHUB_REPO/main/scripts/install.ps1" | iex
 ```
 
 ### Run the binary directly
@@ -386,7 +386,7 @@ flow for this repository. Include:
 You can expect an initial response within a few days. Please give the project
 time to ship a fix before publishing details.
 
-Security fixes are applied to the latest release and the `master` branch;
+Security fixes are applied to the latest release and the `main` branch;
 older releases may not receive backports.
 
 ### Deployment notes
